@@ -43,9 +43,9 @@ def create_app():
     # Creazione e configurazione del microservizio
     builder = MicroserviceBuilder()
     app = (builder
-        .add_endpoint(path="/users", method=HttpMethod.POST, func=create_user)
-        .add_endpoint(path="/users/{user_id}", method=HttpMethod.GET, func=get_user)
-        .add_endpoint(path="/users/{user_id}", method=HttpMethod.PUT, func=update_user)
-        .add_endpoint(path="/users/{user_id}", method=HttpMethod.DELETE, func=delete_user)
+        .endpoint(path="/users", method=HttpMethod.POST, func=create_user)
+        .endpoint(path="/users/{user_id}", method=HttpMethod.GET, func=get_user)
+        .endpoint(path="/users/{user_id}", method=HttpMethod.PUT, func=update_user)
+        .endpoint(path="/users/{user_id}", method=HttpMethod.DELETE, func=delete_user)
         .build())
     return app

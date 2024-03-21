@@ -13,7 +13,7 @@ class MicroserviceBuilder:
         self.app = FastAPI()
         self.endpoints = []
 
-    def add_endpoint(self, path: str, method: HttpMethod, func):
+    def endpoint(self, path: str, method: HttpMethod, func):
         if method == HttpMethod.GET:
             self.app.get(path)(func)
         elif method == HttpMethod.POST:
